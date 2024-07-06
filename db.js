@@ -1,10 +1,14 @@
 const mongoose = require("mongoose");
-const mongoUrl = "mongodb://127.0.0.1:27017/ecomm-db"
+const password = encodeURIComponent("@Priya126");
+const mongoUrl = `mongodb+srv://rishabkohli4:${password}@cluster0.ukvbl6h.mongodb.net/ecomm-db?retryWrites=true&w=majority&appName=Cluster0`;
 
-const mongoConnect = ()=>{
-    mongoose.connect(mongoUrl).then(
-        console.log("mongodb connected")
-    )
+const mongoConnect = async () => {
+    try {
+        await mongoose.connect(mongoUrl);
+        console.log(`MongoDb connected`);
+      } catch (error) {
+        console.error("Error in connecting mongoDb:", error.message);
+      }
 };
 
-module.exports = mongoConnect ;
+module.exports = mongoConnect;
