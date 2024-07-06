@@ -13,7 +13,7 @@ const cartRoute = require('./routes/cart.js')
 mongoConnect()
 
 // middlewares
-app.use(cors())
+app.use(cors({ origin: ["http://localhost:3000"], methods: ["GET", "POST"] }))
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser())
@@ -21,7 +21,7 @@ app.use(checkForAuthenticationCookie('token'))
 app.use(express.urlencoded({ extended: false }))
 
 // routes
-app.use('/api/cart',fetchUser, cartRoute)
+app.use('/api/cart', fetchUser, cartRoute)
 app.use('/api/user', userRoute)
 app.use('/api/product', productRoute)
 app.get('/', (req, res) => {
