@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const password = encodeURIComponent("@Priya126");
-const mongoUrl = `mongodb+srv://rishabkohli4:${password}@cluster0.ukvbl6h.mongodb.net/ecomm-db?retryWrites=true&w=majority&appName=Cluster0`;
+// const password = encodeURIComponent("@Priya126");
+const mongoUrl = `mongodb+srv://rishabkohli4:Priya126@cluster0.ukvbl6h.mongodb.net/ecomm-db?retryWrites=true&w=majority&appName=Cluster0`;
 
 const mongoConnect = async () => {
     try {
