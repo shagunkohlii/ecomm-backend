@@ -13,7 +13,7 @@ const cartRoute = require('./routes/cart.js')
 mongoConnect()
 
 // middlewares
-app.use(cors({ origin: ["http://localhost:3000"], methods: ["GET", "POST"] }))
+app.use(cors({ origin: ['http://localhost:3000', 'https://ecomm-frontend-navy.vercel.app'], methods: ["GET", "POST"] }))
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser())
